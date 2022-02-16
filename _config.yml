@@ -1,1 +1,7 @@
+#Jekyll configuration
+name: Title
+description: Test
+url: "https://notapinkgiraffe.github.io/"
 theme: jekyll-theme-leap-day
+markdown: kramdown
+highlighter: rouge
