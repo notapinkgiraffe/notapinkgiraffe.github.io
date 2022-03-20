@@ -1,0 +1,52 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+sitemap: false
+---
+
+@charset "utf-8";
+
+@import "so-simple";
+
+/** Styles for Projects **/
+
+body {
+//   background-image: url('../../docs/images/magicpattern-wavegen1.png');
+  background-image: url('{{ site.baseurl }}/docs/images/magicpattern-wavegen1.png');
+}
+main {background: #fae6e2; padding-top: 1em; padding-bottom: 1em;}
+
+  /* Why do I have to redeclare it again.. hmm need to understand more on Sass/specific structure */
+  $nav-background-color: #a87dc2 !default;
+
+.navigation-wrapper {margin-top: -1px;}
+.layout--home h2 {
+    border-bottom: $nav-background-color 1px solid;
+// border-bottom-color: $nav-background-color;
+// border-bottom-width: 1px;
+// border-bottom-style: solid;
+    font-style: oblique;}
+
+.entries-grid.featured-mini {grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));}
+.project-grid .entry a.btn--primary {color: #fff;}
+.project-grid .entry a.btn--accent,
+.project-grid .entry a.btn--inverse {color: #000;}
+
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+hr {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border: 1px solid $nav-background-color;
+}
