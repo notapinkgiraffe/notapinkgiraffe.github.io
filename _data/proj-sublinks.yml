@@ -1,0 +1,32 @@
+# Project Sub-Links
+
+- project: brucabinetdb
+  id: 1
+  title: List of Ministers only
+  url: https://hazm.possiblyzebra.net/brucabinetdb/
+  button_title: View List
+  image: /projects/images/bruneicabinet_db_201802.png
+  image_alt: Screenshot of database showing an Airtable base and senior officials grouped by Ministry (MOE) and then by level (Minister, Deputy Minister, Permanent Secretaries)
+  caption: Screenshot of database
+  description: Sint ipsam fugit numquam et delectus vero fugit non nulla animi vitae. Iusto ipsa id minus explicabo et recusandae nobis magni amet.
+
+- project: brucabinetdb
+  id: 2
+  title: Brunei Cabinet Database
+  url: http://bit.ly/brucabinet_base
+  button_title: View Database
+  image: /projects/images/bruneicabinet_db_201802.png
+  image_alt: Screenshot of database showing an Airtable base and senior officials grouped by Ministry (MOE) and then by level (Minister, Deputy Minister, Permanent Secretaries)
+  caption: Screenshot of database
+  description:  A exercitationem ullam adipisci non quia unde nihil. Voluptatibus enim assumenda voluptatem est consequatur illum incidunt commodi et officia molestiae mollitia aut.
+
+- project: brucabinetdb
+  id: 3
+  title: Brunei Cabinet Database
+  url: http://bit.ly/bruneicabinetdb
+  button_title: Visit on Airtable Universe
+  image: /projects/images/bruneicabinet_universe_201704.png
+  image_alt:
+  caption: Screenshot on Airtable Universe
+  description: The database is also viewable on Airtable Universe, a showcase of Airtable databases and templates, as <strong><a href="http://bit.ly/bruneicabinetdb">Brunei Ministers and Permanent Secretaries</a></strong> :)
+  notice: For those new to the database format, this version may be friendlier as it contains a description alongside the database. Please note though, it is a **copy** and may not be up-to-date.

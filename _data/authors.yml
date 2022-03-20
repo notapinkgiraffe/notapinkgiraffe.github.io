@@ -1,0 +1,11 @@
+Hazirah:
+  name: hazirah
+  picture: /images/bio-photo-2.jpg
+  twitter: "@possiblyzebra"
+  links:
+    - title: Twitter
+      url: https://twitter.com/possiblyzebra
+      icon: fab fa-twitter-square
+    - title: Projects
+      url: https://possiblyzebra.net/projects/
+      icon: fab fa-twitter-square

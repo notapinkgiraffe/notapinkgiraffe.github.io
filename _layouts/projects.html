@@ -1,0 +1,83 @@
+---
+layout: page
+---
+
+{{ content }}
+
+<h1>Test - Update in _layouts/projects.html</h1>
+
+{% assign projects_max = 0 %}
+{% for project in site.projects %}
+  {% if project[1].size > projects_max %}
+    {% assign projects_max = project[1].size %}
+  {% endif %}
+{% endfor %}
+
+{% assign project_names_array = "" %}
+{% assign project_counts = "" %}
+{% assign first_array_element = true %}
+{% for i in (1..projects_max) reversed %}
+  {% assign project_names = "" %}
+  {% assign first_project = true %}
+
+  {% for project in site.projects %}
+    {% if project[1].size == i %}
+      {% if first_project %}
+        {% assign first_project = false %}
+      {% else %}
+        {% assign project_names = project_names | append: "," %}
+      {% endif %}
+      {% assign project_names = project_names | append: project[0] %}
+    {% endif %}
+  {% endfor %}
+
+  {% if project_names != "" %}
+    {% assign project_names = project_names | split: "," | sort | join: "," %}
+
+    {% if first_array_element %}
+      {% assign first_array_element = false %}
+    {% else %}
+      {% assign project_names_array = project_names_array | append: "|" %}
+      {% assign project_counts = project_counts | append: "|" %}
+    {% endif %}
+    {% assign project_names_array = project_names_array | append: project_names %}
+    {% assign project_counts = project_counts | append: i %}
+  {% endif %}
+{% endfor %}
+
+{% assign project_names_array = project_names_array | split: "|" %}
+{% assign project_counts = project_counts | split: "|" %}
+
+
+<ul class="taxonomy-index">
+  {% for project_names in project_names_array %}
+    {% assign project_names_list = project_names | split: "," %}
+    {% assign project_count = project_counts[forloop.index0] %}
+    {% for project_name in project_names_list %}
+      <li>
+        <a href="#{{ project_name | slugify }}">
+          <strong>{{ project_name }}</strong> <span class="taxonomy-count">{{ project_count }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  {% endfor %}
+</ul>
+
+{% for project_names in project_names_array %}
+  {% assign project_names_list = project_names | split: "," %}
+  {% for project_name in project_names_list %}
+    <section id="{{ project_name | slugify | downcase }}" class="taxonomy-section">
+      <h2 class="taxonomy-title">{{ project_name }}</h2>
+      {% for project in site.projects %}
+        {% if project[0] == project_name %}
+          <div class="entries-{{ page.entries_layout | default: 'list' }}">
+            {% for entry in project.last %}
+              {% include entry.html %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endfor %}
+      <a href="#page-title" class="back-to-top">{{ site.data.text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+    </section>
+  {% endfor %}
+{% endfor %}
